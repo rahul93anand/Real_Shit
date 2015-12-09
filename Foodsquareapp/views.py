@@ -81,7 +81,7 @@ def SignIn(request):
         else:
             return HttpResponse("Invalid Password or Id")
 
-    return render(request,'Signin.html')
+    return render(request,'SignIn.html')
 
 
 
