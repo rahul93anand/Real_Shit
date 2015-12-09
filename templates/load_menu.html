@@ -1,0 +1,78 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+
+    <ul class="list-group">
+       {% for x in list %}
+                <li class="list-group-item">{{x}}</li>
+
+
+            {% endfor %}
+         </ul>
+
+
+    <h1>You Have ordered :</h1>
+    <p1><b>Your order comes over here</b></p1>
+    <br>
+    <button id="placeorder" > Place Order </button><br>
+    <h id="orderplaced"> </h>
+</div>
+
+</body>
+<script>
+var dish =""
+var final_order = ""
+var mimic_order
+var count = 0
+    $(document).ready(function()
+    {
+    var dish =""
+          $(".list-group").on('click','li',function (){
+          count = count + 1;
+          dish = $(this).text();
+          mimic_order = mimic_order + "     " +  dish
+          final_order = "<p>" + final_order  + "</p>"+ "[" + count + "]" + dish
+          $("p1").html(final_order);
+
+
+});
+
+$("#placeorder").click(function()
+{
+alert(final_order);
+$.post("/placeorder/",
+        {
+          dishes : mimic_order,
+           csrfmiddlewaretoken: '{{csrf_token}}'
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+            $("#orderplaced").html("Thanks for placing your order. Your order number is  : " + data);
+        });
+
+});
+
+
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

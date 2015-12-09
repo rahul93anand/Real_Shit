@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1> Live Tracking ;)</h1>
+<form method="post" action="/livetracking/">
+    {% csrf_token %}
+    <input type="text" id="number" name ="order_number" value="Enter the order number over here" >
+    <input type="submit"  value = "submit">
+</form>
+
+
+
+
+
+
+
+
+</body>
+
+</script>
+</html>

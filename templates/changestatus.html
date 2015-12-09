@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<form method="post" action="/changestatus/">
+    {% csrf_token %}
+    <input type="text" name="order_id" value="Ordernumber">
+    <input type="text" name="order_status" value="Status">
+    <input type="submit" value="submit">
+
+</form>
+</body>
+</html>
