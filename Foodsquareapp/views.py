@@ -8,6 +8,19 @@ from datetime import date, timedelta
 import time
 # Create your views here.
 
+def ScreenShot(request):
+    return render(request,'screenshot.html')
+
+
+def rahulanand(request):
+    return render(request,'livetracking/rahulanand.html')
+def aishwarya(request):
+    return render(request,'livetracking/aishwarya.html')
+def vishrut(request):
+    return render(request,'livetracking/vishrut.html')
+def ashutosh(request):
+    return render(request,'livetracking/ashutosh.html')
+
 
 def LiveTracking(request):
     if request.method == "POST":
@@ -43,8 +56,7 @@ def WelcomePage(request):
 
 def SignIn(request):
     print "________________________________"
-    if request.user.is_authenticated:
-        return redirect('/')
+
     if request.method==  "POST":
         detail = request.POST
         email = detail.get('email')

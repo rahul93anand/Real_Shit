@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import WelcomePage, SignIn, Register, verification, Load_Menu, Restaurant_Menu, Review, Portfolio, ContactUs, PlaceOrder, LiveTracking
+from .views import WelcomePage, SignIn, Register, verification, Load_Menu, Restaurant_Menu, Review, Portfolio, ContactUs, PlaceOrder, LiveTracking, ScreenShot, rahulanand, aishwarya, vishrut, ashutosh
 
 urlpatterns = [
 
@@ -14,6 +14,11 @@ urlpatterns = [
     url(r'^contact_us', ContactUs),
     url(r'^placeorder/', PlaceOrder),
     url(r'^livetracking/', LiveTracking),
+    url(r'^screenshot/', ScreenShot),
+    url(r'^rahulanand/', rahulanand),
+    url(r'^aishwarya/', aishwarya),
+    url(r'^vishrut/', vishrut),
+    url(r'^ashutosh/', ashutosh),
 
 
 
